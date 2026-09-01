@@ -3,12 +3,953 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Lic. María Laura Navarro | Psicóloga</title>
+
+  <style>
+    :root{
+      --crema:#fbf7f2;
+      --crema-2:#f6eee7;
+      --rosa:#d99383;
+      --rosa-suave:#efd7cf;
+      --oliva:#4d5332;
+      --verde-suave:#a6aa89;
+      --texto:#39372f;
+      --blanco:#ffffff;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:var(--crema);
+      color:var(--texto);
+      line-height:1.6;
+    }
+
+    h1,h2,h3{
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight:normal;
+      color:var(--oliva);
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* NAVEGACIÓN */
+
+    header{
+      width:100%;
+      padding:22px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(251,247,242,0.97);
+      border-bottom:1px solid rgba(77,83,50,0.08);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-placeholder{
+      width:46px;
+      height:46px;
+      border:1px solid var(--rosa);
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:var(--rosa);
+      font-family:Georgia, serif;
+      font-size:12px;
+      text-align:center;
+    }
+
+    .brand-text{
+      font-family:Georgia, "Times New Roman", serif;
+      color:var(--oliva);
+      font-size:18px;
+    }
+
+    nav{
+      display:flex;
+      gap:28px;
+      font-size:13px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--oliva);
+    }
+
+    nav a:hover{
+      color:var(--rosa);
+    }
+
+    /* PORTADA */
+
+    .hero{
+      min-height:88vh;
+      display:grid;
+      grid-template-columns:1.05fr 0.95fr;
+      align-items:center;
+      padding:70px 7%;
+      background:
+        radial-gradient(circle at 80% 25%, rgba(239,215,207,.7), transparent 30%),
+        linear-gradient(135deg, var(--crema), #fffaf7);
+    }
+
+    .hero-content{
+      max-width:650px;
+    }
+
+    .eyebrow{
+      color:var(--rosa);
+      letter-spacing:5px;
+      text-transform:uppercase;
+      font-size:13px;
+      margin-bottom:22px;
+    }
+
+    .hero h1{
+      font-size:64px;
+      line-height:1.02;
+      margin-bottom:12px;
+    }
+
+    .apellido{
+      display:block;
+      color:var(--rosa);
+      font-style:italic;
+      font-size:72px;
+      margin-top:3px;
+    }
+
+    .credential{
+      margin-top:25px;
+      color:var(--oliva);
+      font-size:17px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+
+    .services{
+      margin:32px 0;
+      display:grid;
+      gap:9px;
+      color:var(--oliva);
+      letter-spacing:2px;
+      font-size:14px;
+      text-transform:uppercase;
+    }
+
+    .services span::before{
+      content:"✦";
+      color:var(--rosa);
+      margin-right:10px;
+    }
+
+    .intro{
+      max-width:520px;
+      font-size:17px;
+      margin-bottom:30px;
+    }
+
+    .cta{
+      display:inline-block;
+      background:var(--rosa);
+      color:white;
+      padding:15px 28px;
+      border-radius:6px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      font-size:13px;
+      transition:.25s ease;
+    }
+
+    .cta:hover{
+      transform:translateY(-2px);
+      opacity:.92;
+    }
+
+    .secondary-link{
+      display:block;
+      margin-top:20px;
+      color:var(--oliva);
+      font-size:14px;
+      letter-spacing:1px;
+    }
+
+    .hero-visual{
+      min-height:560px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .photo-placeholder{
+      width:min(440px,90%);
+      height:540px;
+      border-radius:220px 220px 20px 20px;
+      background:
+        linear-gradient(rgba(239,215,207,.52),rgba(246,238,231,.9));
+      border:1px solid rgba(217,147,131,.25);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:var(--oliva);
+      padding:30px;
+    }
+
+    /* MENÚ DE ÁREAS */
+
+    .quick-menu{
+      background:white;
+      padding:35px 7%;
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:15px;
+      border-top:1px solid var(--crema-2);
+      border-bottom:1px solid var(--crema-2);
+    }
+
+    .quick-item{
+      text-align:center;
+      padding:18px 8px;
+      color:var(--oliva);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .quick-icon{
+      width:52px;
+      height:52px;
+      margin:0 auto 12px;
+      border:1px solid var(--rosa-suave);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+    }
+
+    /* SECCIONES GENERALES */
+
+    section{
+      padding:90px 7%;
+    }
+
+    .section-label{
+      color:var(--rosa);
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-size:12px;
+      margin-bottom:12px;
+    }
+
+    section h2{
+      font-size:43px;
+      line-height:1.15;
+      margin-bottom:25px;
+    }
+
+    /* SOBRE MI */
+
+    .about{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:75px;
+      align-items:center;
+    }
+
+    .about-card{
+      min-height:420px;
+      background:var(--rosa-suave);
+      border-radius:180px 180px 14px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:35px;
+      color:var(--oliva);
+    }
+
+    .about-text p{
+      margin-bottom:18px;
+      font-size:16px;
+      max-width:720px;
+    }
+
+    .values{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:35px;
+    }
+
+    .value{
+      border-top:1px solid var(--rosa);
+      padding-top:15px;
+    }
+
+    .value strong{
+      display:block;
+      font-family:Georgia, serif;
+      color:var(--oliva);
+      font-size:19px;
+      margin-bottom:4px;
+    }
+
+    /* COMO TRABAJO */
+
+    .approach{
+      background:var(--crema-2);
+    }
+
+    .approach-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+      margin-top:40px;
+    }
+
+    .approach-card{
+      background:white;
+      padding:28px;
+      border-radius:10px;
+      min-height:210px;
+      border:1px solid rgba(77,83,50,.06);
+    }
+
+    .approach-card h3{
+      font-size:21px;
+      margin:14px 0;
+    }
+
+    .number{
+      color:var(--rosa);
+      font-family:Georgia, serif;
+      font-size:26px;
+    }
+
+    /* ATENCIÓN */
+
+    .areas-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+      margin-top:40px;
+    }
+
+    .area{
+      padding:32px 25px;
+      border:1px solid var(--rosa-suave);
+      background:white;
+      border-radius:10px;
+      min-height:220px;
+    }
+
+    .area h3{
+      font-size:24px;
+      margin-bottom:12px;
+    }
+
+    /* VIRTUAL */
+
+    .virtual{
+      background:var(--oliva);
+      color:white;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .virtual h2{
+      color:white;
+    }
+
+    .virtual .section-label{
+      color:var(--rosa-suave);
+    }
+
+    .virtual-note{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.18);
+      padding:32px;
+      border-radius:10px;
+    }
+
+    /* RECURSOS */
+
+    .resources-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:40px;
+    }
+
+    .resource{
+      background:white;
+      padding:28px;
+      border-radius:10px;
+      border:1px solid var(--rosa-suave);
+    }
+
+    .resource small{
+      color:var(--rosa);
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .resource h3{
+      font-size:23px;
+      margin:10px 0;
+    }
+
+    /* PROFESIONALES */
+
+    .professionals{
+      background:linear-gradient(135deg,#f3ded7,#fbf7f2);
+      text-align:center;
+    }
+
+    .professionals p{
+      max-width:700px;
+      margin:0 auto 28px;
+    }
+
+    /* CONSULTA */
+
+    .consultation{
+      text-align:center;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .consultation p{
+      max-width:650px;
+      margin:0 auto 30px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#353a29;
+      color:#f8f3eb;
+      padding:50px 7%;
+      text-align:center;
+    }
+
+    footer .footer-name{
+      font-family:Georgia, serif;
+      font-size:24px;
+      margin-bottom:8px;
+    }
+
+    footer p{
+      font-size:13px;
+      opacity:.9;
+      margin:4px 0;
+    }
+
+    footer .footer-links{
+      margin-top:22px;
+      display:flex;
+      justify-content:center;
+      gap:24px;
+      flex-wrap:wrap;
+      font-size:13px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      header{
+        padding:16px 6%;
+      }
+
+      nav{
+        display:none;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+        padding:60px 7%;
+      }
+
+      .hero h1{
+        font-size:46px;
+      }
+
+      .apellido{
+        font-size:55px;
+      }
+
+      .hero-visual{
+        min-height:auto;
+        margin-top:50px;
+      }
+
+      .photo-placeholder{
+        height:440px;
+      }
+
+      .quick-menu{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .about,
+      .virtual{
+        grid-template-columns:1fr;
+      }
+
+      .approach-grid,
+      .areas-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .resources-grid{
+        grid-template-columns:1fr;
+      }
+
+      .values{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:600px){
+
+      section{
+        padding:70px 7%;
+      }
+
+      .hero{
+        min-height:auto;
+        padding-top:55px;
+      }
+
+      .eyebrow{
+        letter-spacing:3px;
+        font-size:11px;
+      }
+
+      .hero h1{
+        font-size:39px;
+      }
+
+      .apellido{
+        font-size:49px;
+      }
+
+      .credential{
+        font-size:13px;
+      }
+
+      .approach-grid,
+      .areas-grid{
+        grid-template-columns:1fr;
+      }
+
+      section h2{
+        font-size:34px;
+      }
+
+      .photo-placeholder{
+        height:360px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
-  <h1>Lic. María Laura Navarro</h1>
+
+<header>
+  <div class="brand">
+    <div class="logo-placeholder">LOGO</div>
+    <div class="brand-text">Lic. María Laura Navarro</div>
+  </div>
+
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#enfoque">Cómo trabajo</a>
+    <a href="#atencion">Atención</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">Licenciada en Psicología</div>
+
+      <h1>
+        Lic. María Laura
+        <span class="apellido">Navarro</span>
+      </h1>
+
+      <div class="credential">Psicóloga · MP 1804</div>
+
+      <div class="services">
+        <span>Infancias</span>
+        <span>Adolescentes</span>
+        <span>Adultos</span>
+        <span>Familias</span>
+      </div>
+
+      <p class="intro">
+        Acompaño procesos de cambio, crecimiento y bienestar emocional
+        desde una mirada profesional, cercana y respetuosa.
+      </p>
+
+      <a class="cta" href="#contacto">
+        Solicitar primera consulta
+      </a>
+
+      <a class="secondary-link" href="#enfoque">
+        Atención psicológica virtual →
+      </a>
+
+    </div>
+
+    <div class="hero-visual">
+      <div class="photo-placeholder">
+        Aquí incorporaremos tu fotografía profesional
+      </div>
+    </div>
+
+  </section>
+
+
+  <div class="quick-menu">
+
+    <a class="quick-item" href="#sobre-mi">
+      <div class="quick-icon">♡</div>
+      Sobre mí
+    </a>
+
+    <a class="quick-item" href="#enfoque">
+      <div class="quick-icon">⌁</div>
+      Cómo trabajo
+    </a>
+
+    <a class="quick-item" href="#atencion">
+      <div class="quick-icon">✦</div>
+      Atención psicológica
+    </a>
+
+    <a class="quick-item" href="#recursos">
+      <div class="quick-icon">◌</div>
+      Recursos
+    </a>
+
+    <a class="quick-item" href="#profesionales">
+      <div class="quick-icon">+</div>
+      Profesionales
+    </a>
+
+    <a class="quick-item" href="#contacto">
+      <div class="quick-icon">✉</div>
+      Contacto
+    </a>
+
+  </div>
+
+
+  <section id="sobre-mi" class="about">
+
+    <div class="about-card">
+      Aquí podremos incorporar una segunda fotografía profesional
+    </div>
+
+    <div class="about-text">
+
+      <div class="section-label">Sobre mí</div>
+
+      <h2>
+        Acompañar también es comprender la historia detrás de lo que nos pasa.
+      </h2>
+
+      <p>
+        Soy María Laura Navarro, Licenciada en Psicología. Mi trabajo se centra
+        en el acompañamiento de infancias, adolescentes, adultos y familias
+        desde una mirada Cognitivo-Conductual y Neurocognitiva.
+      </p>
+
+      <p>
+        A lo largo de mi recorrido profesional me he especializado en el
+        abordaje de dificultades emocionales, conductuales y vinculares,
+        adaptando cada intervención a las características y necesidades
+        particulares de quien consulta.
+      </p>
+
+      <p>
+        Entiendo la terapia como un espacio de trabajo compartido: no solamente
+        para hablar sobre aquello que genera malestar, sino también para
+        comprenderlo, desarrollar herramientas y construir nuevas formas de
+        afrontarlo.
+      </p>
+
+      <div class="values">
+
+        <div class="value">
+          <strong>Comprender</strong>
+          Dar sentido a lo que sucede.
+        </div>
+
+        <div class="value">
+          <strong>Acompañar</strong>
+          Construir un espacio seguro y respetuoso.
+        </div>
+
+        <div class="value">
+          <strong>Transformar</strong>
+          Llevar nuevas herramientas a la vida cotidiana.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="enfoque" class="approach">
+
+    <div class="section-label">Cómo trabajo</div>
+
+    <h2>Un proceso terapéutico activo y colaborativo.</h2>
+
+    <div class="approach-grid">
+
+      <div class="approach-card">
+        <div class="number">01</div>
+        <h3>Enfoque Cognitivo-Conductual</h3>
+        <p>
+          Comprender la relación entre pensamientos, emociones y conductas para
+          construir herramientas concretas.
+        </p>
+      </div>
+
+      <div class="approach-card">
+        <div class="number">02</div>
+        <h3>Perspectiva Neurocognitiva</h3>
+        <p>
+          Integrar el funcionamiento cognitivo y emocional para comprender de
+          manera más amplia cada proceso.
+        </p>
+      </div>
+
+      <div class="approach-card">
+        <div class="number">03</div>
+        <h3>Psicoeducación</h3>
+        <p>
+          Comprender lo que nos ocurre también puede convertirse en una
+          herramienta terapéutica.
+        </p>
+      </div>
+
+      <div class="approach-card">
+        <div class="number">04</div>
+        <h3>Herramientas prácticas</h3>
+        <p>
+          Ejercicios y propuestas que permiten trasladar lo trabajado en sesión
+          a situaciones de la vida cotidiana.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="atencion">
+
+    <div class="section-label">Atención psicológica</div>
+
+    <h2>Un espacio pensado para cada etapa.</h2>
+
+    <div class="areas-grid">
+
+      <div class="area">
+        <h3>Infancias</h3>
+        <p>
+          Acompañamiento emocional, conductual, vincular y del desarrollo
+          adaptado a las necesidades de cada niño.
+        </p>
+      </div>
+
+      <div class="area">
+        <h3>Adolescentes</h3>
+        <p>
+          Un espacio para comprender emociones, vínculos, cambios, identidad y
+          desafíos propios de esta etapa.
+        </p>
+      </div>
+
+      <div class="area">
+        <h3>Adultos</h3>
+        <p>
+          Acompañamiento en procesos emocionales, vitales y vinculares desde
+          una mirada activa y colaborativa.
+        </p>
+      </div>
+
+      <div class="area">
+        <h3>Familias</h3>
+        <p>
+          Orientación y acompañamiento para comprender situaciones familiares y
+          construir nuevas estrategias.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="virtual">
+
+    <div>
+      <div class="section-label">Modalidad virtual</div>
+
+      <h2>Un espacio terapéutico también puede construirse a la distancia.</h2>
+
+      <p>
+        La modalidad online permite sostener un proceso profesional, cercano y
+        personalizado independientemente del lugar donde te encuentres.
+      </p>
+    </div>
+
+    <div class="virtual-note">
+      <p>
+        Sesiones individuales · Orientación familiar · Atención en español
+      </p>
+    </div>
+
+  </section>
+
+
+  <section id="recursos">
+
+    <div class="section-label">Recursos terapéuticos</div>
+
+    <h2>Herramientas para acompañar diferentes procesos.</h2>
+
+    <div class="resources-grid">
+
+      <div class="resource">
+        <small>Infancias</small>
+        <h3>Recursos emocionales</h3>
+        <p>
+          Propuestas para trabajar emociones, autoestima, habilidades sociales
+          y diferentes situaciones de la vida cotidiana.
+        </p>
+      </div>
+
+      <div class="resource">
+        <small>Adolescentes</small>
+        <h3>Autoconocimiento</h3>
+        <p>
+          Materiales para explorar pensamientos, emociones, vínculos,
+          identidad y crecimiento.
+        </p>
+      </div>
+
+      <div class="resource">
+        <small>Familias y profesionales</small>
+        <h3>Guías y herramientas</h3>
+        <p>
+          Recursos pensados para acompañar intervenciones y procesos de
+          orientación.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="profesionales" class="professionals">
+
+    <div class="section-label">Para profesionales</div>
+
+    <h2>Herramientas para acompañar la práctica clínica.</h2>
+
+    <p>
+      Materiales terapéuticos, registros, plantillas y recursos diseñados para
+      facilitar la planificación y el acompañamiento de diferentes procesos.
+    </p>
+
+    <a class="cta" href="#contacto">
+      Próximamente
+    </a>
+
+  </section>
+
+
+  <section id="contacto" class="consultation">
+
+    <div class="section-label">Primera consulta</div>
+
+    <h2>¿Estás pensando en comenzar un espacio terapéutico?</h2>
+
+    <p>
+      Podés completar el formulario de primera consulta para contarme brevemente
+      qué estás buscando y poder orientarte sobre los próximos pasos.
+    </p>
+
+    <a class="cta" href="#">
+      Solicitar primera consulta
+    </a>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-name">
+    Lic. María Laura Navarro
+  </div>
+
   <p>Psicóloga · MP 1804</p>
-  <p>Mi sitio web está en construcción.</p>
+
+  <p>
+    Cognitivo Conductual · Perspectiva Neurocognitiva
+  </p>
+
+  <div class="footer-links">
+    <span>Instagram</span>
+    <span>Contacto</span>
+    <span>Privacidad</span>
+  </div>
+
+</footer>
+
 </body>
 </html>
