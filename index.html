@@ -289,8 +289,30 @@
       text-align:center;
       padding:35px;
       color:var(--oliva);
+      flex-direction:column;
+gap:18px;
+overflow:hidden;
     }
+.about-logo{
+    width:82px;
+    height:82px;
+    object-fit:contain;
+    display:block;
+    margin-bottom:6px;
+}
 
+.about-card-title{
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:30px;
+    color:var(--oliva);
+    margin-bottom:4px;
+}
+
+.about-card-line{
+    font-size:15px;
+    line-height:1.5;
+    max-width:280px;
+}
     .about-text p{
       margin-bottom:18px;
       font-size:16px;
@@ -682,8 +704,15 @@
   <section id="sobre-mi" class="about">
 
     <div class="about-card">
-      Aquí podremos incorporar una segunda fotografía profesional
-    </div>
+  <img src="logo.png" alt="Logo Lic. María Laura Navarro" class="about-logo">
+
+  <div class="about-card-title">Mi recorrido</div>
+
+  <div class="about-card-line">Psicología clínica</div>
+  <div class="about-card-line">Neurorehabilitación</div>
+  <div class="about-card-line">Infancias · Adolescencias · Adultos · Familias</div>
+  <div class="about-card-line">Acompañamiento a pacientes oncológicos y sus familias</div>
+</div>
 
     <div class="about-text">
 
