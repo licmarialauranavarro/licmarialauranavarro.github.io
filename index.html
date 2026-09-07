@@ -588,9 +588,10 @@ footer .footer-links a:hover{
 
 #recursos .resources-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(3, minmax(0, 350px));
   gap:28px;
   align-items:stretch;
+  justify-content:center;
 }
 
 #recursos .download-resource{
