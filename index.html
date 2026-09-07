@@ -557,6 +557,126 @@ footer .footer-links a{
 footer .footer-links a:hover{
   opacity:.65;
 }
+    /* RECURSOS GRATUITOS */
+
+#recursos .resources-intro{
+  max-width:760px;
+  margin:0 0 45px;
+  line-height:1.8;
+  color:var(--texto);
+}
+
+.free-resources-title{
+  margin-bottom:28px;
+}
+
+.free-resources-title span{
+  display:block;
+  font-size:.76rem;
+  letter-spacing:2.2px;
+  color:var(--rosa);
+  margin-bottom:8px;
+}
+
+.free-resources-title h3{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:2rem;
+  font-weight:400;
+  color:var(--oliva);
+  margin:0;
+}
+
+#recursos .resources-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
+  align-items:stretch;
+}
+
+#recursos .download-resource{
+  background:var(--blanco);
+  border:1px solid rgba(77,83,50,.10);
+  border-radius:22px;
+  overflow:hidden;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 10px 30px rgba(57,55,47,.06);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+#recursos .download-resource:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 38px rgba(57,55,47,.10);
+}
+
+.resource-cover{
+  width:100%;
+  aspect-ratio:3 / 4;
+  object-fit:cover;
+  display:block;
+}
+
+.resource-content{
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.resource-content small{
+  font-size:.7rem;
+  letter-spacing:1.6px;
+  color:var(--rosa);
+  margin-bottom:9px;
+}
+
+.resource-content h3{
+  margin:0 0 12px;
+  color:var(--oliva);
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.45rem;
+  font-weight:400;
+}
+
+.resource-content p{
+  margin:0 0 22px;
+  line-height:1.65;
+  font-size:.94rem;
+  color:var(--texto);
+}
+
+.resource-download{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:auto;
+  padding:13px 20px;
+  border-radius:999px;
+  background:var(--oliva);
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1.1px;
+  font-size:.72rem;
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.resource-download:hover{
+  opacity:.85;
+  transform:translateY(-1px);
+}
+
+@media(max-width:900px){
+  #recursos .resources-grid{
+    grid-template-columns:1fr;
+    max-width:520px;
+  }
+
+  .resource-cover{
+    aspect-ratio:3 / 4;
+  }
+}
     /* RESPONSIVE */
 
     @media(max-width:900px){
@@ -997,45 +1117,109 @@ de la conducta.
 
   <section id="recursos">
 
-    <div class="section-label">Recursos terapéuticos</div>
+  <div class="section-label">Recursos gratuitos</div>
 
-    <h2>Herramientas para acompañar diferentes procesos.</h2>
+  <h2>Herramientas para acompañar diferentes procesos.</h2>
 
-    <div class="resources-grid">
+  <p class="resources-intro">
+    Materiales pensados para acompañar el trabajo emocional,
+    favorecer el autoconocimiento y brindar herramientas que puedan
+    utilizarse tanto en el espacio terapéutico como en casa.
+  </p>
 
-      <div class="resource">
-        <small>Infancias</small>
-<h3>Recursos terapéuticos</h3>
-<p>
-  Materiales para abordar emociones, autoestima, habilidades sociales,
-  vínculos, regulación emocional y diferentes desafíos de la vida cotidiana.
-</p>
-      </div>
+  <div class="free-resources-title">
+    <span>INFANCIAS</span>
+    <h3>Recursos para descargar</h3>
+  </div>
 
-      <div class="resource">
-        <small>Adolescentes</small>
-       <h3>Recursos para adolescentes</h3>
+  <div class="resources-grid">
+
+    <article class="resource download-resource">
+      <img
+        src="portada-asi-estuvo-mi-dia.jpg"
+        alt="Portada del recurso Así estuvo mi día"
+        class="resource-cover"
+      >
+
+      <div class="resource-content">
+        <small>REGISTRO EMOCIONAL</small>
+        <h3>Así estuvo mi día</h3>
+
         <p>
-          
-  Materiales para explorar emociones, pensamientos, vínculos, autoestima,
-  identidad, ansiedad, toma de decisiones y diferentes desafíos propios
-  de esta etapa.
-</p>
-        
+          Un recurso para explorar experiencias cotidianas,
+          reconocer emociones y reflexionar sobre lo vivido
+          de una manera cercana y participativa.
+        </p>
+
+        <a
+          href="asi-estuvo-mi-dia.pdf"
+          class="resource-download"
+          download
+        >
+          Descargar gratis
+        </a>
       </div>
+    </article>
 
-      <div class="resource">
-        <small>Familias y profesionales</small>
-<h3>Guías y recursos de apoyo</h3>
-<p>
-  Materiales orientados a la psicoeducación, la orientación familiar
-  y el acompañamiento de diferentes situaciones clínicas y del desarrollo.
-</p>
+
+    <article class="resource download-resource">
+      <img
+        src="portada-que-puedo-hacer-cuando.jpg"
+        alt="Portada del recurso Qué puedo hacer cuando"
+        class="resource-cover"
+      >
+
+      <div class="resource-content">
+        <small>REGULACIÓN EMOCIONAL</small>
+        <h3>¿Qué puedo hacer cuando…?</h3>
+
+        <p>
+          Actividades para reconocer situaciones difíciles,
+          explorar diferentes respuestas y descubrir estrategias
+          que pueden ayudar frente a la frustración y la ansiedad.
+        </p>
+
+        <a
+          href="que-puedo-hacer-cuando.pdf"
+          class="resource-download"
+          download
+        >
+          Descargar gratis
+        </a>
       </div>
+    </article>
 
-    </div>
 
-  </section>
+    <article class="resource download-resource">
+      <img
+        src="portada-lo-que-me-hace-especial.jpg"
+        alt="Portada del recurso Lo que me hace especial"
+        class="resource-cover"
+      >
+
+      <div class="resource-content">
+        <small>AUTOCONOCIMIENTO Y AUTOESTIMA</small>
+        <h3>Lo que me hace especial</h3>
+
+        <p>
+          Un cuaderno para descubrir cualidades, emociones,
+          fortalezas y características personales, favoreciendo
+          una mirada más amable y valiosa sobre uno mismo.
+        </p>
+
+        <a
+          href="lo-que-me-hace-especial.pdf"
+          class="resource-download"
+          download
+        >
+          Descargar gratis
+        </a>
+      </div>
+    </article>
+
+  </div>
+
+</section>
 
 
   <section id="profesionales" class="professionals">
